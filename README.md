@@ -1,249 +1,149 @@
+## moonwalk - a fast and minimalistic blog theme with clean dark mode
 
-[![Forks][forks-shield]][forks-url]
-[![Stargazers][stars-shield]][stars-url]
-[![Issues][issues-shield]][issues-url]
-[![MIT License][license-shield]][license-url]
+<img src="https://raw.githubusercontent.com/abhinavs/moonwalk/master/_screenshots/moonwalk.png" />
 
-<!-- LOGO -->
+<h3 align="center">
+  <img src="https://raw.githubusercontent.com/abhinavs/moonwalk/master/logo.png" width="24"/>
+<a href="https://abhinavs.github.io/moonwalk/">TRY THE DEMO</a>
+</h3>
+
+## Features
+* Light & dark mode with theme switcher
+* Vertical list, horizontal list, card list
+* Landing page with navbar, footer, portfolio
+* Fast (very minimal CSS) - 100/100 on performance, accessibility, best practices and SEO, please see [Lighthouse Report](https://raw.githubusercontent.com/abhinavs/moonwalk/master/_screenshots/lighthouse-report.png) for more details
+* Responsive and mobile friendly
+* SEO optimized (uses [Jekyll Soopr SEO Tag](https://github.com/jekyll/jekyll-soopr-seo-tag))
+* RSS feed (uses [Jekyll Feed](https://github.com/jekyll/jekyll-feed))
+* Easy to extend
+* Fully compatible with [GitHub Pages](https://pages.github.com/) (see [GitHub Pages installation](#github-pages-installation))
+* Auto-generated share images for social media (using [Soopr](https://www.soopr.co))
+* Share & like buttons (using [Soopr](https://www.soopr.co))
+
+
+#### Lighthouse
+
+<img src="https://raw.githubusercontent.com/abhinavs/moonwalk/master/_screenshots/lighthouse-report.png" />
+
+## Quick Installation
+1. [Fork this repository](https://github.com/abhinavs/moonwalk/fork).
+2. `cd moonwalk`
+3. `bin/bootstrap`
+4. [Optional] Sign up on Soopr, and add your `publish_token` in `_config.yml` file.
+
+## Starting Server
+`bin/start` - development server will start at http://127.0.0.1:4000
+
+## Deployment
+Moonwalk can be easily deployed on all the cloud providers (AWS etc.), and on static website hosting services like Netlify & Vercel. You can also use this button to do one click deploy
 <br />
+<br />
+[![Deploy with Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/abhinavs/moonwalk)
 
-<p align="center">
-  <a href="https://github.com/akiritsu/pRoJEct-VeXEd">
-    <img src="src/assets/img/favicon.png" alt="Logo" width="80" height="80">
-  </a>
+If you want to use Moonwalk as a gem or use Github Pages, please see [this page](https://github.com/abhinavs/moonwalk/blob/master/github_pages.md)
 
-  <h3 align="center">pRoJEct-VeXEd</h3>
-    <h5 align="center">v 2.4</h5>
-    <br />
-  <p align="center">
-    pRoJEct-NeGYa is a hacker-like, highly-customizable theme for note-keeping, personal-website or CV.
-    <br />
-    <br />
-    <a href="https://akiritsu.github.io/pRoJEct-VeXEd/">View Demo</a>
-    ·
-    <a href="https://github.com/akiritsu/pRoJEct-VeXEd/issues">Report Bug</a>
-    ·
-    <a href="https://github.com/akiritsu/pRoJEct-VeXEd/issues">Request Feature</a>
-  </p>
+## Customizing
 
-</p>
+You can edit `_config.yml` file to customize your blog. You can change things such as the name of the blog, the author, the appearance of the theme (light, dark or auto), how dates are formatted, etc. Customizable fields should be straightforward to understand. Still, `_config.yml` contains some comments to help you understand what each field does.
 
-<!-- TABLE OF CONTENTS -->
-## Table of Contents
+For further customization (e.g. layout, CSS) see the [official Jekyll's documentation](https://jekyllrb.com/docs/themes/#overriding-theme-defaults) on customizing gem-based themes.
 
-- [Table of Contents](#table-of-contents)
-- [About The Project](#about-the-project)
-  - [Features](#features)
-  - [Builtwith](#builtwith)
-- [Getting Started](#getting-started)
-  - [Prerequisites](#prerequisites)
-  - [Installation](#installation)
-  - [Personalize and Customize](#personalize-and-customize)
-    - [_config.yml](#_configyml)
-    - [Collections](#collections)
-    - [Writing](#writing)
-    - [Comment](#comment)
-    - [Test locally](#test-locally)
-    - [Front Matter](#front-matter)
-- [Roadmap](#roadmap)
-- [Contributing](#contributing)
-- [License](#license)
-- [Contact](#contact)
+### Customize the menu
+
+In order to add/edit/delete entries in the home page, you can copy the `home.yml` file inside `_data` folder. Through that file you can define the structure of the menu and add data for navbar, footer, portfolio or simply remove all of that and use simple blog layout. Take a look at the default configuration to get an idea of how it works and read on for a more comprehensive explaination.
+
+The `home.yml` file accepts the following fields:
+
+1. Vertical list
+  - `entries` define a new unordered list that will contain menu entries
+  - each entry is marked by a `-` at the beginning of the line
+  - each entry has the following attributes:
+    - `title`, which defines the text to render for that menu entry
+    - `url`, which can either be a URL or `false`. If it is `false`, the entry will be rendered as plain text; otherwise the entry will be rendered as a link pointing to the specified URL. Note that the URL can either be relative or absolute.
+    - `post_list`, which can be `true` or `false`. If it is true, the entry will have all posts in the site as subentries. This is used to render your post list.
+    - `entries`, yes, you can have entries inside entries. In this way you can create nested sublists!
+2. Card list - cards are used to showcase portfolio projects. Please see `project_entries` in `_data/home.yml` file
+  - each entry is marked by a `-` at the beginning of the line
+  - each entry has the following attributes:
+    - `title` defines the header of the card
+    - `desc` is the body of the card
+    - `url` is a relative or absolute link which this card can point to.
+    - `highlight` in case you want to highlight something, keep the text short though
+3. Horizontal list - moonwalk uses horizontal lists to create navbar and footer. Please see `navbar_entries` and `footer_entries` in `data/home.yml` file
+  - each entry is marked by a `-` at the beginning of the line
+  - each entry has the following attributes:
+    - `title` defines the header of the card
+    - `url` is a relative or absolute link which this card can point to.
 
 
-<!-- ABOUT THE PROJECT -->
-## About The Project
+### Pro tips
+1. Moonwalk has 3 in-built layouts:
+  - post - for content
+  - blog - for listing blog posts
+  - home - for landing page
+  you can change your `index.md` file to use either home or blog layout.
 
-![homepage](src/assets/img/Screenshot-2.png)
-
-This jekyll theme is a content-oriented blog, cv or learning notes, aimed at providing a convinient note-keeping tool. You can keep and review your notes or articles in different collections without any functional recode.
-
-### Features
-
-* Highly customizable
-* Formula insertion
-* Code test online
-* Easy-to-use cheatsheet
-* Hacker-like theme
-* Code highlight
-* Text Decryption
-* Convinient code exhibition and review
-* Table of content
-* Atom Feeds
-* SEO
-
-### Builtwith
-
-* Bundler
-* Jekyll
-* Mathpix
-* Font Awesome
-* Sjcl
-* Disqus
-* Mermaid
-
-## Getting Started
-
-### Prerequisites
-* rubygems
-
-The installation of gem is depend on your operating system. Alternatively, you can download Gem through browser: [Ruby](https://www.ruby-lang.org/en/downloads/), and install rubygems manually.
-
-```bash
-# macOS
-
-brew update
-brew install ruby
-
-# Ubuntu
-sudo apt-get install ruby
-
-# Arch
-sudo pacman -S ruby
-
+2. It is extremely easy to tweak the color scheme. 
+  - for light mode, customize these css variables
+```css
+html {
+    --bg: #fff;
+    --bg-secondary: #f8f9fa;
+    --headings: #000;
+    --text: #333;
+    --links: blue;
+    --highlight: #ffecb2; // light yellow
+}
 ```
-
-* bundler
-
-```bash
-gem install bundler
+  - for dark mode customize these css variables
+```css
+@mixin dark-appearance {
+  html, body  {
+      --bg: #1f242A;
+      --bg-secondary: #323945;
+      --headings: #3D9970;
+      --text: #adb5bd;
+      --links: #91a7ff;
+      --highlight: #ffd8a8;
+      --highlight: #ffd43b;
+  };
+}
 ```
-* jekyll
-```bash
-bundler install jekyll
-```
+3. Sign up for free on [Soopr](https://www.soopr.co) and add your `publish_token` in `_config.yml` file - with this, each page gets short URL, like button and auto generated share image for social media.
 
-* jekyll plugins
+<img src="https://raw.githubusercontent.com/abhinavs/moonwalk/master/_screenshots/twitter_card.png" />
 
-```bash
-gem install jekyll-sitemap jekyll-feed jekyll-seo-tag jekyll-mermaid
-```
-
-### Installation
-
-1. Fork this project on [github](https://github.com/akiritsu/pRoJEct-VeXEd), change project settings, and clone your own repository into your local disk.
-
-```bash
-git clone https://github.com/{{YOUR_USERNAME}}/{{YOUR_REPOSITORY}}.git
-```
-
-2. Change directory.
-
-```bash
-cd {{YOUR_REPOSITORY_DIR}}
-```
-
-### Personalize and Customize
-
-#### _config.yml
-
-Edit **_config.yml** with your own website information.
-
-#### Collections
-
-All your articles could be stored in this folder. You could create a new collection by creating a subfolder begin with a slash, and register the basic information in **_config.yml**. Here is an example:
-
-```yaml
-# Collections
-collections:
-  notes:
-    output          : true
-    permalink       : /:collection/:title/
-    sort_by         : date
-  portfolio:
-    output          : true
-    permalink       : /:collection/:title/
-    order: # specify post order manually
-      - portfolio3.md
-      - portfolio2.md
-      - portfolio1.md
-  album:
-    output          : true
-    permalink       : /:collection/:title/
-    sort_by         : date
-```
-
-All your articles would be shown by clicking **Archive** button in the header of your website.
-
-#### Writing
-
-Delete all sample collections under **./collections/**, and have fun in writing!
-
-#### Comment
-
-Create your own account in [Disqus.com](https://disqus.com/), and change the attribute "disqus_username" in **_config.yml**.
-
-#### Test locally
-
-Run command below, and access "127.0.0.1:4000" to test your website locally.
-
-```bash
-bundle exec jekyll serve
-```
-
-#### Front Matter
-
-You can add many front matter to customize a page. For more information, visit official document: [https://jekyllrb.com/] (https://jekyllrb.com/docs/front-matter/)
-
-```yaml
-layout: post # page layout, must be one of layouts under src/_layouts
-title: "Sample" # string
-author: "your_name" # string
-post_list: "cate" # whether to show post list under collections/_post, one of false, "cate", "date"
-collection_list: true # true or false
-toc: true # table of content, true or false
-show_date: true # whether to show date, true or false
-home_btn: true # whether to show home button, true or false
-btn_text: true # whether to show button text, true or false
-footer: true # whether to show footer, true or false
-maximize: true # whether to show maximize button, true or false
-encrypted_text: true # whether to enable encrypted text, true or false
-publish: true # if you wish keep this page invisible, put false here
-toc_level: 4 # the depth of toc, one of 1, 2, 3, 4, 5, 6
-comment: ture # whether to show comment area
-category: "sample" # string
-date: 2019-5-25 # YYYY-MM-DD
-excerpt: "This is excerpt." # string
-abstract: "This is abstract. Abstract is blank by default." # string
-```
-
-## Roadmap
-
-1. On-browser code execution teminal.
-2. Code review mode.
-3. Slide mode.
-4. Rapid cheatsheet access.
-
-
-<!-- CONTRIBUTING -->
 ## Contributing
 
-Contributions are what make the open source community such an amazing place to be learn, inspire, and create. Any contributions you make are **greatly appreciated**.
+Bug reports and pull requests are welcome on GitHub at https://github.com/abhinavs/moonwalk.
 
-1. Fork the Project
-2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the Branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
+## Development
 
-<!-- LICENSE -->
+To set up your environment to develop this theme, run `bundle install`.
+
+Your theme is setup just like a normal Jekyll site! To test your theme, run `bundle exec jekyll serve` and open your browser at `http://localhost:4000`. This starts a Jekyll server using your theme. Add pages, documents, data, etc. like normal to test your theme's contents. As you make modifications to your theme and to your content, your site will regenerate and you should see the changes in the browser after a refresh, just like normal.
+
+When your theme is released, only the files in `_layouts`, `_includes`, `_sass` and `assets` tracked with Git will be bundled.
+To add a custom directory to your theme-gem, please edit the regexp in `moonwalk.gemspec` accordingly.
+
+## Acknowledgement
+This theme's original base is [no style please!](https://github.com/riggraz/no-style-please) theme created by  [Riccardo Graziosi](https://riggraz.dev/) - many thanks to him for creating a wonderful theme with nearly no css. 
+
 ## License
 
-Distributed under the MIT License. See `LICENSE` for more information.
+The theme is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
 
+## Other Projects
+If you like Moonwalk, do check out my other projects
+*   [cookie](https://github.com/abhinavs/cookie) - a free landing website boilerplate using Jekyll and Tailwind CSS
+*   [scoop](https://github.com/abhinavs/scoop) - a Sinatra boilerplate project using Corneal, ActiveRecord, Capistrano, Puma & Nginx
+*   [soopr](https://www.soopr.co) - a tool that supports you in content marketing
+*   [apicagent](https://www.apicagent.com) - a FREE API that extracts device details from user-agent string
+*   [pincodr](https://pincodr.apiclabs.com) - a FREE API for Indian pincodes
+*   [humangous](https://www.humangous.co) - create public and private 'working with you' guides
+*   [blockr](https://www.abhinav.co/blockr) - a CLI tool to help you easily block and unblock websites
+*   [microrequests](https://www.abhinav.co/microrequests) - a Python library to help you consume microservice efficiently
 
-<!-- CONTACT -->
-## Contact
+✨⚡You can read more about me on my [blog](https://www.abhinav.co/about/) or follow me on Twitter - [@abhinav](https://twitter.com/abhinav)
 
-DeerRIDER - [Email](mailto://deerrider666@outlook.com)
-
-Project Link: [https://github.com/akiritsu/pRoJEct-VeXEd](https://github.com/akiritsu/pRoJEct-VeXEd)
-
-[forks-shield]: https://img.shields.io/github/forks/akiritsu/pRoJEct-VeXEd.svg?style=flat-square
-[forks-url]: https://github.com/akiritsu/pRoJEct-VeXEd/network/members
-[stars-shield]: https://img.shields.io/github/stars/akiritsu/pRoJEct-VeXEd.svg?style=flat-square
-[stars-url]: https://https://github.com/akiritsu/pRoJEct-VeXEd/stargazers
-[issues-shield]: https://img.shields.io/github/issues/akiritsu/pRoJEct-VeXEd.svg?style=flat-square
-[issues-url]: https://https://github.com/akiritsu/pRoJEct-VeXEd/issues
-[license-shield]: https://img.shields.io/github/license/akiritsu/pRoJEct-VeXEd.svg?style=flat-square
-[license-url]: https://https://github.com/akiritsu/pRoJEct-VeXEd/blob/master/LICENSE.txt
+✨⚡If you like my work, you can [buy me a coffee](https://buymeacoffee.com/abhinavs)                
