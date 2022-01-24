@@ -31,6 +31,7 @@ project_entries:
   - title: Python-Projects
     url: https://tresillo2017.github.io/Python-projects/
     desc: This repo contains all my python codes from my high school homework, hope you like it
+    highlight: UPDATE
 
 # old_project_entries:
   # - title: Soopr
