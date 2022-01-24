@@ -5,35 +5,32 @@ navbar_entries:
   - title: blog
     url: blog
 
-  - title: website
-    url: https://www.abhinav.co
-
 project_entries:
-  - title: Project 1
-    url: overview-post
-    desc: This is an example project, configured in _data/home.yml
+  - title: Witools
+    url: https://tresillo2017.github.io/WiTools/
+    desc: An android app for setting up new wifis or getting info about an existing one
 
-  - title: Project 2
-    url: overview-post
-    desc: Projects are shown in card layout
+  - title: Simple Calculator for android
+    url: https://tresillo2017.github.io/Calculadora.APK/
+    desc: This is just my first android app, nothing to see here
 
-  - title: Project 3
-    url: overview-post
-    desc: You can control visibility from _config.yml file
+  - title: IOE2022
+    url: https://tresillo2017.github.io/IOE2/
+    desc: This is a c++ repo with all my progresion, the website is update since I don't have to much time to update it, but on the github repo is all the code.
 
-  - title: Project 4
-    url: overview-post
-    desc: This project uses highlight markup, configured in _data/home.yml
+  - title: SpainMC (Webpage)
+    url: https://spainrpserver.github.io/
+    desc: This is my minecraft server wich is a roleplay server made in minecraft, this is not finished, especial credits to @ManuflosoYT and @Vicboy22 
     highlight: WIP
 
-  - title: Project 5
-    url: overview-post
-    desc: Moonwalk also has horizontal list (used in header and footer)
+  - title: SpainMC (Launcher)
+    url: https://spainrpserver.github.io/launcher/
+    desc: Also this is the launcher of the server made by me currently is working fine so you should be able to download it without any problem (includes java and minecraft with mods for the server)
     highlight: WIP
 
-  - title: Project 6
-    url: overview-post
-    desc: It also has a scalable vertical list (in case you need it)
+  - title: Python-Projects
+    url: https://tresillo2017.github.io/Python-projects/
+    desc: This repo contains all my python codes from my high school homework, hope you like it
 
 old_project_entries:
   - title: Soopr
@@ -54,14 +51,14 @@ old_project_entries:
     desc: The better people know you, the better they collaborate
 
 footer_entries:
-  - title: abhinav's homepage
-    url: https://www.abhinav.co
+  - title: Tomas' homepage
+    url: https://tresillo2017.github.io/
 
   - title: twitter
-    url: https://twitter.com/abhinav
+    url: https://twitter.com/toomas_ps
 
   - title: github
-    url: https://github.com/abhinavs
+    url: https://github.com/tresillo2017
 
   - title: feed
     url: feed.xml
@@ -84,7 +81,7 @@ misc_entries:
     url: false
     entries:
       - title: on Github
-        url: https://github.com/abhinavs/moonwalk
+        url: https://github.com/tresillo2017/tresillo2017.github.io
 
       - title: originally built for abhinav's homepage
         url: https://www.abhinav.co
