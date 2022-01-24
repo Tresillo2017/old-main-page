@@ -32,23 +32,23 @@ project_entries:
     url: https://tresillo2017.github.io/Python-projects/
     desc: This repo contains all my python codes from my high school homework, hope you like it
 
-old_project_entries:
-  - title: Soopr
-    url: https://www.soopr.co
-    desc: Delight your readers - add beautiful share and like buttons easily to your websites 
-    highlight: NEW
+# old_project_entries:
+  # - title: Soopr
+    # url: https://www.soopr.co
+    # desc: Delight your readers - add beautiful share and like buttons easily to your websites 
+    # highlight: NEW
 
-  - title: Cookie
-    url: https://github.com/abhinavs/cookie
-    desc: An open source landing website with supporting pages and integrated blog
+  # - title: Cookie
+    # url: https://github.com/abhinavs/cookie
+    # desc: An open source landing website with supporting pages and integrated blog
 
-  - title: Moonwalk
-    url: https://github.com/abhinavs/moonwalk
-    desc: A fast and minimalist Jekyll blog theme with clean dark mode
+  # - title: Moonwalk
+    # url: https://github.com/abhinavs/moonwalk
+    # desc: A fast and minimalist Jekyll blog theme with clean dark mode
 
-  - title: Humangous
-    url: https://www.humangous.co
-    desc: The better people know you, the better they collaborate
+  # - title: Humangous
+    # url: https://www.humangous.co
+    # desc: The better people know you, the better they collaborate
 
 footer_entries:
   - title: Tomas' homepage
